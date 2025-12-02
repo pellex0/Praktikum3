@@ -2,10 +2,11 @@
 import java.util.ArrayList;
 
 public class GeometrischeObjekte {
-     private ArrayList<O>
+     private ArrayList<String> olist;
 
     public GeometrischeObjekte() {
-        ArrayList<o> geometrischeobjekte = new GeometrischeObjekte();
+        ArrayList<String> olist = new ArrayList<String>();
+
     }
     private void add() {
 

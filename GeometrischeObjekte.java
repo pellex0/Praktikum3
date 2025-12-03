@@ -1,14 +1,16 @@
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class GeometrischeObjekte {
-     private ArrayList<String> olist;
+     private List<GeometrischeObjekte> olist;
 
     public GeometrischeObjekte() {
-        ArrayList<String> olist = new ArrayList<>();
+        this.olist = new ArrayList<>();
 
     }
-    private void add() {
+    private void add(GeometrischeObjekte objekte) {
+        olist.add(objekte);
     }
     private int getAnzahl() {
         return olist.size();

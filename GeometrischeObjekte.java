@@ -3,32 +3,39 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class GeometrischeObjekte {
-     private List<GeometrischeObjekte> olist;
+     private List<GeometrischesObjekt> olist;
+     private double gesamtvolumen;
+     private double gesamtoberflaeche;
 
     public GeometrischeObjekte() {
         this.olist = new ArrayList<>();
-
     }
-    private void add(GeometrischeObjekte objekte) {
+    
+    public void add(GeometrischesObjekt objekte) {
         olist.add(objekte);
     }
     private int getAnzahl() {
         return olist.size();
     }
     private double berechneGesamtesVolumen() {
-        for(i = 0; i < olist.size(); i++) {
-            double gesamtvolumen = gesamtvolumen + olist.get(i);
-        return gesamtvolumen;
+        for(GeometrischesObjekt objekte : olist) {
+            gesamtvolumen =  gesamtvolumen + objekte.getVolumen();
         }
+        return gesamtvolumen;
     }
     private double berechneGesamteOberflaeche() {
-        for(i = 0; i < olist.size(); i++) {
-            double gesamtoberflaeche = gesamtoberflaeche + olist.get(i);
+        for(GeometrischesObjekt objekte : olist) {
+            gesamtoberflaeche = gesamtoberflaeche + objekte.getOberflaeche();
         }
-        return  gesamtoberflaeche;
+        return gesamtoberflaeche;
     }
     public void ausgeben() {
-        System.out.println(olist.size() + olist.get() );
+        System.out.println( "Anzahl geometrischer Objekte: " + getAnzahl());
+        System.out.print("Gespeicherte Objekte: ");
+                            for (GeometrischesObjekt objekte : olist) {
+                                System.out.println(objekte.toString());
+                            };
+        System.out.println("Gesamtvolumen der Objekte " + berechneGesamtesVolumen() + ", "); 
+        System.out.println("Gesamtoberflaeche der Objekte " + berechneGesamteOberflaeche());
     }
-
 }

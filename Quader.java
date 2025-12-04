@@ -1,4 +1,4 @@
-public class Quader {
+public class Quader implements GeometrischesObjekt {
     private double laenge;
     private double breite;
     private double hoehe;
@@ -34,24 +34,18 @@ public class Quader {
     private double getHoehe() {
         return hoehe;
     }
-    private double getVolumen()  {
+    public double getVolumen()  {
         return laenge * breite * hoehe;
     }
-    private double getOberflaeche() {
+    public double getOberflaeche() {
         return ((laenge * breite) + (breite * hoehe) + (laenge * hoehe)) * 2;
     }
     @Override
     public String toString() {
-        return "Quader mit Laenge = "
-                + getLaenge()
-                + ", Breite = "
-                + getBreite()
-                + ", Hoehe = "
-                + getHoehe()
-                + ", Volumen = "
-                + getVolumen()
-                + ", Oberflaeche = "
-                + getOberflaeche();
-    }
-
+        return "Quader mit Laenge = " + getLaenge()
+                + ", Breite = " + getBreite()
+                + ", Hoehe = " + getHoehe()
+                + ", Volumen = " + getVolumen()
+                + ", Oberflaeche = " + getOberflaeche();
+    }// Methoden getVolumen und getOberflaeche aus Interface können nicht private sein 
 }

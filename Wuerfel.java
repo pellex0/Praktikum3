@@ -1,4 +1,4 @@
-public class Wuerfel {
+public class Wuerfel implements GeometrischesObjekt {
     private double seitenlaenge;
 
     public Wuerfel(double seitenlaenge) throws GeometrischesObjektException {
@@ -11,21 +11,16 @@ public class Wuerfel {
     private double getSeitenlaenge() {
         return seitenlaenge;
     }
-   
-    private double getVolumen() {
+    public double getVolumen() {
         return seitenlaenge * seitenlaenge * seitenlaenge;
     }
-    private double getOberflaeche() {
+    public double getOberflaeche() {
         return (seitenlaenge * seitenlaenge) * 6;
     }
     @Override
     public String toString() {
-        return "Wuerfel mit Seitenlaenge = "
-                + getSeitenlaenge()
-                + ", Volumen = "
-                + getVolumen()
-                + ", Oberflaeche = "
-                + getOberflaeche();
-    } 
-    
+        return "Wuerfel mit Seitenlaenge = " + getSeitenlaenge()
+                + ", Volumen = " + getVolumen()
+                + ", Oberflaeche = " + getOberflaeche();
+    }// Methoden getVolumen und getOberflaeche aus Interface können nicht private sein 
 }
